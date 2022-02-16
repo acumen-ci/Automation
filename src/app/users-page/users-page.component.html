@@ -1,0 +1,44 @@
+<div class="users-page">
+
+
+  <section class="user-navigation">
+
+    <section class="form-field">
+
+      <label for="">Search users</label>
+      <input [(ngModel)]="userSearch" (ngModelChange)="filterUsers( $event )" />
+
+    </section>
+
+    <ul>
+      <li *ngFor="let user of filteredUsersList">
+        <a class="user-option"
+           [routerLink]="user.id"
+           routerLinkActive="user-selected">
+          <mat-icon>
+            account_circle
+          </mat-icon>
+          <section class="user-information">
+            <p class="user-username">
+              {{ user.userName }}
+
+            </p>
+            <p class="user-email">
+              {{ user.email }}
+            </p>
+          </section>
+
+          <div [class]="'status-indicator ' + user.userState">
+
+          </div>
+
+        </a>
+
+      </li>
+    </ul>
+  </section>
+
+  <section class="user-overview">
+    <router-outlet></router-outlet>
+  </section>
+</div>

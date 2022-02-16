@@ -1,0 +1,55 @@
+
+<ng-container *ngIf="!userError; else UserNotFound">
+  <mat-card *ngIf="( user | async ) as userObject">
+    <mat-card-title>
+      Account details
+    </mat-card-title>
+
+    <mat-card-content>
+
+
+      <section class="data-group">
+        <div class="label">
+          Username
+        </div>
+
+        <div class="data">
+          {{ userObject.userName }}
+        </div>
+      </section>
+
+      <section class="data-group">
+        <div class="label">
+          e-mail
+        </div>
+
+        <div class="data">
+          {{ userObject.email }}
+        </div>
+      </section>
+
+      <section class="data-group">
+        <div class="label">
+          Status
+        </div>
+
+        <div class="data">
+          <div [class]="'status-indicator ' + userObject.userState">
+
+          </div>
+        </div>
+      </section>
+
+    </mat-card-content>
+
+    <mat-card-footer>
+      <button (click)="deleteUser( userObject.id )">
+        Delete user
+      </button>
+    </mat-card-footer>
+  </mat-card>
+</ng-container>
+
+<ng-template #UserNotFound>
+  User not found!
+</ng-template>

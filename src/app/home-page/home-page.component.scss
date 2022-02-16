@@ -1,0 +1,18 @@
+.introduction-text {
+  max-width: 50%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  padding: 0 4rem;
+
+  ul {
+    padding-left: 4rem;
+    margin: 1.6rem 0;
+
+    li {
+      list-style:circle;
+    }
+  }
+}

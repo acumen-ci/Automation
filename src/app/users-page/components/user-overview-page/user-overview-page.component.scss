@@ -1,0 +1,57 @@
+mat-card {
+  max-width: 76rem;
+  margin: 2rem auto;
+}
+
+.status-indicator {
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border-radius: 100%;
+
+  &.active {
+    background-color: var( --green );
+  }
+
+  &.inactive {
+    background-color: var( --red );
+  }
+}
+
+.data-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  .label {
+    padding: 1rem;
+    min-width: 16rem;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .data {
+    padding: 1rem;
+  }
+}
+
+
+mat-card-footer {
+  padding: 1rem;
+  display: flex;
+  border-top: solid 1px var( --light-bg );
+  justify-content: flex-end;
+
+  button {
+    padding: 1rem 1.5rem;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: var( --indigo );
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

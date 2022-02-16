@@ -1,0 +1,151 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  position: relative;
+
+
+
+
+  .user-menu,
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+
+    mat-icon {
+      transition: all 0.1375s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        color: var( --purple );
+      }
+
+      + mat-icon {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+nav, main {
+  width: 100%;
+}
+
+nav {
+  display: inline-flex;
+  flex-direction: column;
+  max-width: 16rem;
+  height: calc( 100% - 2rem );
+  justify-content: space-between;
+  background-color: var( --white-bg );
+  padding: 1rem;
+  z-index: 999;
+
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+
+    + ul {
+      margin-top: 0;
+    }
+  }
+
+  .branding {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+
+  }
+
+  ul {
+    width: 100%;
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .favourite {
+        transition: all 0.175s ease-out;
+        &:hover,
+        &.favourited {
+          color: var( --yellow );
+          cursor: pointer;
+        }
+      }
+
+
+      &.user-section {
+
+        padding-top: 1rem;
+        border-top: solid 1px var( --light-bg );
+        margin-bottom: 0;
+        display: flex;
+        align-items: center;
+
+        .user-details {
+          display: flex;
+          flex-direction: column;
+        }
+        mat-icon {
+          margin-right: 1rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+          margin: 0;
+        }
+        small {
+          font-size: 1rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+  .menu-item a {
+    display: flex;
+    width: calc( 100% - 0.5rem );
+    text-decoration: none;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--main-text);
+    border-radius: 4px;
+    padding: 0.5rem;
+    transition: all 0.1375s ease-in;
+
+    mat-icon {
+      width: 1.6rem;
+      height:1.6rem;
+      font-size: 1.6rem;
+      margin-right: 0.5rem;
+    }
+
+    &:hover,
+    &.active {
+      background-color: var(--light-hover);
+    }
+
+    &.active {
+      background-color: var(--indigo);
+      color: var( --white );
+    }
+  }
+}
+
+main {
+  background-color: var( --light-bg );
+  height: 100%;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+

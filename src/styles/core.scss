@@ -1,0 +1,17 @@
+body {
+  background-color: var( --white );
+}
+
+
+.dropshadow {
+  box-shadow: 0 6px 6px 0 rgba( 0, 0, 0, 0.125 );
+}
+
+app-root {
+  display: flex;
+  height: 100%;;
+}
+
+router-outlet + * {
+  width: 100%;
+}

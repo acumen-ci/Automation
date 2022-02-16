@@ -1,0 +1,109 @@
+<nav class="dropshadow">
+  <section class="primary-navigation">
+    <section class="branding">
+      <img src="https://via.placeholder.com/100x35" alt="Temporary hold for company logo">
+    </section>
+
+    <p *ngIf="( menuFavourites | async )?.length">
+      Favourites
+    </p>
+    <ul>
+      <li
+        class="menu-item"
+        *ngFor="let menuItem of menuFavourites | async">
+        <a [routerLink]="menuItem.url"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+          <mat-icon>
+            {{ menuItem.icon }}
+          </mat-icon>
+          {{ menuItem.label }}
+        </a>
+
+        <mat-icon
+          class="favourite"
+          [class.favourited]="favouriteItems[menuItem.label]"
+          (click)="toggleMenuitemFavour( menuItem )">
+          {{ favouriteItems[menuItem.label] ? 'star' : 'star_outline' }}
+        </mat-icon>
+
+      </li>
+    </ul>
+
+    <p *ngIf="( menuFavourites | async )?.length">
+      Navigation
+    </p>
+    <ul>
+      <li
+        class="menu-item"
+        *ngFor="let menuItem of menuItems$ | async">
+        <a [routerLink]="menuItem.url"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+          <mat-icon>
+            {{ menuItem.icon }}
+          </mat-icon>
+          {{ menuItem.label }}
+        </a>
+
+        <mat-icon
+          class="favourite"
+          [class.favourited]="favouriteItems[menuItem.label]"
+          (click)="toggleMenuitemFavour( menuItem )">
+          {{ favouriteItems[menuItem.label] ? 'star' : 'star_outline' }}
+        </mat-icon>
+
+      </li>
+    </ul>
+  </section>
+
+
+
+  <section class="user-menu">
+
+    <ul>
+      <li class="menu-item">
+        <a>
+          <mat-icon>
+            notifications
+          </mat-icon>
+          Notifications
+        </a>
+      </li>
+
+      <li class="user-section">
+        <mat-icon>
+          account_circle
+        </mat-icon>
+        <section class="user-details">
+          <p>Example user</p>
+          <small>View profile</small>
+        </section>
+
+      </li>
+    </ul>
+  </section>
+</nav>
+
+<section class="main-content">
+
+  <header>
+
+    <div class="breadcrumbs">
+
+      <mat-icon
+        [routerLink]="['home']">
+        home
+      </mat-icon>
+
+    </div>
+
+
+  </header>
+
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+
+</section>

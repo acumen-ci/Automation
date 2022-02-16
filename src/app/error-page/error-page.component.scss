@@ -1,0 +1,25 @@
+
+.route-not-found {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 30rem;
+    width: 30rem;
+    height: 30rem;
+    color: var( --red );
+    margin-right: 2rem;
+  }
+
+  .description  {
+    max-width: 40rem;
+
+    h2 {
+      font-size: 2.4rem;;
+    }
+  }
+
+
+}
