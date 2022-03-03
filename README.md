@@ -11,7 +11,7 @@ The current tech stack being used in the project is
 ## Project setup
 
 Clone the project from 
-https://github.com/tapashya/qa-automation-assessment.git
+https://github.com/acumen-ci/Automation.git
 Open it up in an editor of your choice (VS code is reccommended), open the terminal and run ```npm i```
 Once that is complete follow the commands below depending on what you want to do
 
